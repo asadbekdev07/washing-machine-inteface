@@ -19,8 +19,9 @@ body {
   margin: 0;
   font-family: "Arial", sans-serif;
   font-size: 16px;
-  background-color: #ffffff;
-  color: #222222;
+  background-color: pink;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
 img {
@@ -28,13 +29,24 @@ img {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* CONTAINER  */
 
 .container {
   width: 100%;
-  max-width: 1200px;
-  padding-left: 50px;
-  padding-right: 50px;
+  max-width: 640px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -42,4 +54,119 @@ img {
 /* MAIN-CONTENT  */
 .main-content {
   flex-grow: 1;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.washing-mode-info {
+  position: relative;
+}
+
+.washing-mode-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  list-style: none;
+}
+.washing-mode-item:not(:last-child) {
+  margin-right: 40px;
+}
+.washing-mode-link {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.washing-mode-link:hover {
+  opacity: 0.8;
+}
+
+.washing-mode-item-active .washing-mode-link {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.washing-mode-notice {
+  max-width: 520px;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.washing-mode-controller {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  padding: 0;
+  background-color: #ffffff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.washing-mode-controller:hover {
+  opacity: 1;
+}
+.washing-mode-controller-prev {
+  right: 100%;
+}
+
+.washing-mode-controller-next {
+  left: 100%;
+}
+
+
+.washing-mode-controller-img {
+  width: 24px;
+  height: 24px;
+}
+.start-button {
+  position: absolute;
+  padding: 5px 60px;
+  top: 92%;
+  left: 20px;
+  color: #ffffff;
+  background-color: #000;
+  border: 0;
+  border-radius: 5px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+.start-button:hover {
+  transform: translateY(45%);
+}
+.washing-mode-status {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.washing-mode-status-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+}
+.washing-mode-status-item-timer {
+  background-color: #555;
+}
+.washing-mode-status-item-temperature {
+  background-color: #333;
+}
+.washing-mode-status-item-load {
+  background-color: #111;
+}
+
+.washing-mode-status-heading {
+  font-size: 14px;
+  color: #ff907c;
+}
+.washing-mode-status-value {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
